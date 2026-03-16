@@ -197,9 +197,13 @@ void SYS_Initialize ( void* data )
 
 
 
+    TCC1_PWMInitialize();
+
     NVMCTRL_Initialize();
 
     EVSYS_Initialize();
+
+    TCC0_PWMInitialize();
 
 
     NVIC_Initialize();

@@ -62,14 +62,28 @@ int main ( void )
                 // 4. Process the received command
                 switch(rxData) {
                     case 'W': // Forward
-                        LED_Set();
-                        for(volatile int i = 0; i < 500000; i++); 
+                        AIN1_Clear();
+                        AIN2_Set();
+                        BIN1_Set();
+                        BIN2_Clear();
                         break;
                     case 'S': // Reverse
-                        LED_Set();
+                        AIN1_Set();
+                        AIN2_Clear();
+                        BIN1_Clear();
+                        BIN2_Set();
+                        break;
+                    case 'B': //Short Break
+                        AIN1_Set();
+                        AIN2_Set();
+                        BIN1_Set();
+                        BIN2_Set();
                         break;
                     case '0': // Stop
-                        LED_Clear();
+                        AIN1_Clear();
+                        AIN2_Clear();
+                        BIN1_Clear();
+                        BIN2_Clear();
                         break;
                     default:
                         // Stop or Handle invalid command

@@ -65,6 +65,42 @@
 // *****************************************************************************
 // *****************************************************************************
 
+/*** Macros for AIN1 pin ***/
+#define AIN1_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 3)
+#define AIN1_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 3)
+#define AIN1_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 3)
+#define AIN1_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 3)
+#define AIN1_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 3)
+#define AIN1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 3)) & 0x01)
+#define AIN1_PIN                  PORT_PIN_PA03
+
+/*** Macros for AIN2 pin ***/
+#define AIN2_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 6)
+#define AIN2_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 6)
+#define AIN2_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 6)
+#define AIN2_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 6)
+#define AIN2_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 6)
+#define AIN2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 6)) & 0x01)
+#define AIN2_PIN                  PORT_PIN_PA06
+
+/*** Macros for BIN1 pin ***/
+#define BIN1_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 8)
+#define BIN1_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 8)
+#define BIN1_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 8)
+#define BIN1_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 8)
+#define BIN1_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 8)
+#define BIN1_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 8)) & 0x01)
+#define BIN1_PIN                  PORT_PIN_PA08
+
+/*** Macros for BIN2 pin ***/
+#define BIN2_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 11)
+#define BIN2_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 11)
+#define BIN2_Toggle()            (PORT_REGS->GROUP[0].PORT_OUTTGL = 1 << 11)
+#define BIN2_OutputEnable()      (PORT_REGS->GROUP[0].PORT_DIRSET = 1 << 11)
+#define BIN2_InputEnable()       (PORT_REGS->GROUP[0].PORT_DIRCLR = 1 << 11)
+#define BIN2_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 11)) & 0x01)
+#define BIN2_PIN                  PORT_PIN_PA11
+
 /*** Macros for LED pin ***/
 #define LED_Set()               (PORT_REGS->GROUP[0].PORT_OUTSET = 1 << 15)
 #define LED_Clear()             (PORT_REGS->GROUP[0].PORT_OUTCLR = 1 << 15)
@@ -134,10 +170,18 @@ typedef enum
 
 typedef enum
 {
+    /* PA03 pin */
+    PORT_PIN_PA03 = 3,
     /* PA04 pin */
     PORT_PIN_PA04 = 4,
     /* PA05 pin */
     PORT_PIN_PA05 = 5,
+    /* PA06 pin */
+    PORT_PIN_PA06 = 6,
+    /* PA08 pin */
+    PORT_PIN_PA08 = 8,
+    /* PA11 pin */
+    PORT_PIN_PA11 = 11,
     /* PA15 pin */
     PORT_PIN_PA15 = 15,
     /* PA23 pin */
